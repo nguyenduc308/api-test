@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParse = require('body-parser');
+const PORT = process.env.PORT || 8000;
 mongoose.connect('mongodb+srv://admin:9jSUXf0aZ9udKddT@ducluxblog.c36zo.mongodb.net/blog?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
     .then(() => console.log("db connnect"))
     .catch(console.log)
@@ -20,6 +21,6 @@ app.use(bodyParse.json());
 
 app.use('/api/v1', require('./api'));
 
-app.listen(8000, () => {
-    console.log('Blog running')
+app.listen(PORT, () => {
+    console.log('Blog running on port' + PORT)
 })
