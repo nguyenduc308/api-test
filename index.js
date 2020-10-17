@@ -20,6 +20,6 @@ app.use(bodyParse.json());
 
 app.use('/api/v1', require('./api'));
 
-app.listen(5000, () => {
+app.listen(8000, () => {
     console.log('Blog running')
 })
